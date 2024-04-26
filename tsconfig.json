@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "composite": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "target": "esnext",
+    "outDir": "lib/typescript",
+    "types": ["jest", "node"]
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "**/lib/**/*",
+    "**/*.test.ts",
+    "**/__mocks__/**/*",
+    "**/__tests__/**/*",
+    "**/__fixtures__/**/*",
+    "**/__snapshots__/**/*",
+    "**/__helpers__/**/*"
+  ],
+  "include": ["src/**/*", "types.d.ts"]
+}
