@@ -27,32 +27,6 @@ const segmentClient = createClient({
   trackAppLifecycleEvents: true,
   debug: true,
   flushPolicies: [new CountFlushPolicy(1)],
-  // deviceInfoProvider: async (config) => {
-  //   return {
-  //     appName: 'Kepler Sample',
-  //     appVersion: '0.1',
-  //     buildNumber: '1',
-  //     bundleId: 'com.segment.testing.custom.device.info',
-  //     locale: 'en_US',
-  //     networkType: 'wifi',
-  //     osName: 'iOS',
-  //     osVersion: '20.0',
-  //     screenHeight: 800,
-  //     screenWidth: 600,
-  //     screenDensity: 2.625,
-  //     timezone: 'Europe/London',
-  //     manufacturer: 'Apple',
-  //     model: 'x86_64',
-  //     deviceName: 'iPhone',
-  //     deviceId: '123-456-789',
-  //     deviceType: 'phone',
-  //   };
-  // },
-  // uuidProvider: () => {
-  //   let next = startingUUID.toString();
-  //   startingUUID++;
-  //   return next;
-  // },
 });
 
 export class Logger extends Plugin {
