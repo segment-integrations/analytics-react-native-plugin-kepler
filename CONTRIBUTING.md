@@ -15,7 +15,10 @@ These instructions run the App in Fast Refresh mode so you can make changes and 
 5. Terminal A: `kepler build -b Debug`
 6. Terminal A: `kepler run-kepler build/vega-tv2023-aarch64-debug/amazonkepler_aarch64.vpkg com.segment.keplersample.main -s`
 
-Note: Right now the system is set to load the plugin from the tarball file in the root. If you make changes in the library itself you will have to `npm pack` to make sure it reloads everything!
+> Note: If you have trouble running `kepler build` try sourcing the environment first!
+> `source ~/.kepler/kntools/environment-setup-sdk.sh`
+
+> Note: Right now the system is set to load the plugin from the tarball file in the root. If you make changes in the library itself you will have to `npm pack` to make sure it reloads everything!
 
 Future Work: package redirects just like in the core monorepo
 
