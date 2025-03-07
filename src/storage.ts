@@ -1,4 +1,4 @@
-const AsyncStorage = require('@amzn/react-native-kepler/Libraries/Storage/AsyncStorage');
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Persistor } from '@segment/analytics-react-native';
 
 export const KeplerPersistor: Persistor = {
