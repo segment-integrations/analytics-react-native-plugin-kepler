@@ -18,8 +18,8 @@
   "dependencies": {
     "@amzn/react-native-device-info": "^2.0.0",
     "@amzn/react-native-kepler": "~2.0.0",
-    "@segment/analytics-react-native": "^2.20.0-beta.1",
-    "@segment/analytics-react-native-plugin-kepler": "file:../segment-analytics-react-native-plugin-kepler-0.1.0.tgz",
+    "@segment/analytics-react-native": "2.20.0-beta.2",
+    "@segment/analytics-react-native-plugin-kepler": "file:../segment-analytics-react-native-plugin-kepler-0.3.0.tgz",
     "react": "18.2.0",
     "react-native": "0.72.0",
     "react-native-uuid": "^2.0.2"
