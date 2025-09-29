@@ -14,4 +14,5 @@ id = "com.segment.keplersample"
 [[components.interactive]]
 id = "com.segment.keplersample.main"
 runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+categories = ["com.amazon.category.main"]
 launch-type = "singleton"
