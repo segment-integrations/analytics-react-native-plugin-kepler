@@ -1,6 +1,6 @@
 # @segment/analytics-react-native-plugin-kepler
 
-This plugin contains support for Amazon Kepler as a platform for React Native apps.
+This plugin contains support for Amazon Vega as a platform for React Native apps.
 
 ## Install
 
@@ -16,7 +16,7 @@ Now create you client as follows:
 
 ```ts
 // Import the createClient method from the plugin instead of the core package!
-// This automatically sets up all the storage and providers specifically for Amazon Kepler platform
+// This automatically sets up all the storage and providers specifically for Amazon Vega platform
 import { createClient } from "@segment/analytics-react-native-plugin-kepler";
 
 const segmentClient = createClient({

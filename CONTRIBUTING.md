@@ -30,4 +30,4 @@ The library itself is plain TS code. As such you can use any normal NPM commands
 
 `npm pack # pack for sharing a release`
 
-Note: Due to how Amazon Kepler gets injected currently this only supports Node v18 + NPM. Do not try to use Yarn/PNPM with this!
+Note: Due to how Amazon Vega gets injected currently this only supports Node v18 + NPM. Do not try to use Yarn/PNPM with this!
