@@ -16,16 +16,16 @@
     "release": "npm-run-all lint test compile"
   },
   "dependencies": {
-    "@amzn/react-native-device-info": "^2.0.0",
-    "@amzn/react-native-kepler": "~2.0.0",
+    "@amazon-devices/react-native-device-info": "^2.0.0",
+    "@amazon-devices/react-native-kepler": "~2.0.0",
     "@segment/analytics-react-native": "2.20.0-beta.2",
-    "@segment/analytics-react-native-plugin-kepler": "file:../segment-analytics-react-native-plugin-kepler-0.3.0.tgz",
+    "@segment/analytics-react-native-plugin-kepler": "^0",
     "react": "18.2.0",
     "react-native": "0.72.0",
     "react-native-uuid": "^2.0.2"
   },
   "devDependencies": {
-    "@amzn/kepler-cli-platform": "^0",
+    "@amazon-devices/kepler-cli-platform": "^0",
     "@babel/core": "^7.20.0",
     "@babel/runtime": "^7.20.0",
     "@babel/traverse": "7.22.8",

@@ -1,4 +1,4 @@
-import DeviceInfo from '@amzn/react-native-device-info';
+import DeviceInfo from '@amazon-devices/react-native-device-info';
 import { 
   getApplicationName, 
   getVersion, 
@@ -6,8 +6,8 @@ import {
   getBundleId, 
   getSystemVersion, 
   getModel 
-} from "@amzn/react-native-device-info";
-import { getCountry, getTimeZone } from '@amzn/react-native-localize';
+} from "@amazon-devices/react-native-device-info";
+import { getCountry, getTimeZone } from '@amazon-devices/react-native-localize';
 import { DeviceInfoProvider } from '@segment/analytics-react-native';
 
 export const deviceInfoProvider: DeviceInfoProvider = async (config) => {
