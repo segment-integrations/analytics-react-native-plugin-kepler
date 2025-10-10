@@ -1,7 +1,7 @@
 {
   "name": "@segment/analytics-react-native-plugin-kepler",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.1.0",
   "description": "The hassle-free way to add Segment analytics to your React-Native app for Amazon Kepler",
   "main": "lib/commonjs/index",
   "scripts": {
@@ -45,16 +45,16 @@
   },
   "homepage": "https://github.com/segmentio/analytics-react-native/tree/master/packages/plugins/plugin-amplitudeSession#readme",
   "peerDependencies": {
-    "@amzn/react-native-device-info": "^2.0.0",
-    "@amzn/react-native-kepler": "~2.0.0",
+    "@amazon-devices/react-native-device-info": "^2.0.0",
+    "@amazon-devices/react-native-kepler": "~2.0.0",
     "@segment/analytics-react-native": "2.20.0-beta.2",
-    "@amzn/react-native-localize": "~2.0.0",
+    "@amazon-devices/react-native-localize": "~2.0.0",
     "react-native-uuid": "^2.0.2",
     "react-native": "*",
-    "@react-native-async-storage/async-storage": "npm:@amzn/react-native-async-storage__async-storage@~2.0.0"
+    "@react-native-async-storage/async-storage": "npm:@amazon-devices/react-native-async-storage__async-storage@~2.0.0"
   },
   "overrides": {
-   "@react-native-async-storage/async-storage": "npm:@amzn/react-native-async-storage__async-storage@~2.0.0"
+   "@react-native-async-storage/async-storage": "npm:@amazon-devices/react-native-async-storage__async-storage@~2.0.0"
  },
   "devDependencies": {
     "@segment/analytics-react-native": "2.20.0-beta.2",
