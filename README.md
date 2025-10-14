@@ -6,11 +6,11 @@ This plugin contains support for Amazon Vega as a platform for React Native apps
 
 Install the dependencies for this package:
 
-`npm install react-native-uuid @amzn/react-native-device-info @segment/analytics-react-native@beta`
+`npm install react-native-uuid @amazon-devices/react-native-device-info @segment/analytics-react-native@beta`
 
-Then install this package from tarball (Pending Public Release):
+Then install this package from npm registry
 
-`npm install segment-analytics-react-native-plugin-kepler-0.1.0.tgz`
+`npm install @segment/analytics-react-native-plugin-kepler`
 
 Now create you client as follows:
 
@@ -30,7 +30,7 @@ See the [main readme](https://github.com/segmentio/analytics-react-native/blob/c
 
 ## Limitations
 
-- `@amzn/react-native-device-info` does not currently support accessing all the device information such as app name and version, screen dimensions, OS versions, locale, etc. Some information inside the context will be set to `unknown` or empty values. These will come online as Amazon starts adding this information in future package releases.
+- `@amazon-devices/react-native-device-info` does not currently support accessing all the device information such as app name and version, screen dimensions, OS versions, locale, etc. Some information inside the context will be set to `unknown` or empty values. These will come online as Amazon starts adding this information in future package releases.
 - `trackDeepLinks` option is not supported.
 - `Native AnonymousId` is not supported
 

@@ -18,10 +18,6 @@ These instructions run the App in Fast Refresh mode so you can make changes and 
 > Note: If you have trouble running `kepler build` try sourcing the environment first!
 > `source ~/.kepler/kntools/environment-setup-sdk.sh`
 
-> Note: Right now the system is set to load the plugin from the tarball file in the root. If you make changes in the library itself you will have to `npm pack` to make sure it reloads everything!
-
-Future Work: package redirects just like in the core monorepo
-
 ## Working on the Library
 
 The library itself is plain TS code. As such you can use any normal NPM commands.
