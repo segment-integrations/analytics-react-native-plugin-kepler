@@ -6,11 +6,19 @@ This plugin contains support for Amazon Vega as a platform for React Native apps
 
 Install the dependencies for this package:
 
-`npm install react-native-uuid @amazon-devices/react-native-device-info @segment/analytics-react-native@beta`
+```
+npm install react-native-uuid \
+  @amazon-devices/react-native-device-info@2.1.9000000000-rn-83 \
+  @amazon-devices/react-native-localize@2.1.9000000000-rn-83 \
+  "@react-native-async-storage/async-storage@npm:@amazon-devices/react-native-async-storage__async-storage@2.1.9000000000-rn-83" \
+  @segment/analytics-react-native
+```
 
-Then install this package from npm registry
+Then install this package from npm registry:
 
 `npm install @segment/analytics-react-native-plugin-kepler`
+
+> **React Native 0.83 / Vega SDK 0.24:** Use plugin version `^2.0.0`. If your app is still on RN 0.72 / Vega SDK ≤0.19, pin to plugin version `^1.0.0`.
 
 Now create you client as follows:
 

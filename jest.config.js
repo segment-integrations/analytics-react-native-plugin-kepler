@@ -1,5 +1,9 @@
-const baseConfig = require('@segment/analytics-rn-shared/jest.config.base');
-
 module.exports = {
-  ...baseConfig,
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  roots: ['<rootDir>/src'],
+  testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+  },
 };
