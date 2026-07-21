@@ -1,0 +1,28 @@
+/*
+ * Copyright (c) 2022 Amazon.com, Inc. or its affiliates.  All rights reserved.
+ *
+ * PROPRIETARY/CONFIDENTIAL.  USE IS SUBJECT TO LICENSE TERMS.
+ */
+
+const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+
+/**
+ * Metro configuration
+ * https://facebook.github.io/metro/docs/configuration
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const defaultConfig = getDefaultConfig(__dirname);
+
+const config = {
+  resolver: {
+    platforms: [...(defaultConfig.resolver?.platforms ?? []), 'kepler'],
+  },
+  transformer: {
+    transformIgnorePatterns: [
+      'node_modules/(?!(@amazon-devices|react-native|@react-native|@react-native-async-storage)/)',
+    ],
+  },
+};
+
+module.exports = mergeConfig(defaultConfig, config);

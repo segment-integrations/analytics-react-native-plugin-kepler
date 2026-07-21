@@ -1,0 +1,5 @@
+{
+  "//": "The declared app name must follow this pattern to be KRL-compatible",
+  "name": "com.segment.keplersample83.main",
+  "displayName": "AmazonKepler83"
+}
