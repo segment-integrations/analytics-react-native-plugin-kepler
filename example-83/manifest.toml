@@ -13,6 +13,6 @@ id = "com.segment.keplersample83"
 [components]
 [[components.interactive]]
 id = "com.segment.keplersample83.main"
-runtime-module = "/com.amazon.kepler.keplerscript.runtime.loader_2@IKeplerScript_2_0"
+runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 categories = ["com.amazon.category.main"]
 launch-type = "singleton"

@@ -6,11 +6,81 @@ This plugin contains support for Amazon Vega as a platform for React Native apps
 
 Install the dependencies for this package:
 
-`npm install react-native-uuid @amazon-devices/react-native-device-info @segment/analytics-react-native@beta`
+```sh
+npm install react-native-uuid \
+  @amazon-devices/react-native-device-info \
+  @amazon-devices/react-native-localize \
+  @segment/analytics-react-native
+```
 
-Then install this package from npm registry
+For React Native 0.83 (Vega SDK 0.24), also add the async-storage alias:
+
+```sh
+npm install @react-native-async-storage/async-storage@npm:@amazon-devices/react-native-async-storage__async-storage
+```
+
+Then install this package from npm registry:
 
 `npm install @segment/analytics-react-native-plugin-kepler`
+
+### Metro configuration (Kepler 4 / Vega SDK 0.24 only)
+
+Kepler 4 uses React Native's New Architecture exclusively — there is no legacy bridge. `@segment/analytics-react-native` tries to access native modules at load time, which crashes on Kepler 4. Add the following to your `metro.config.js` to intercept that module with a safe no-op shim:
+
+```js
+const path = require('path');
+const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+// Capture Kepler's resolveRequest before merging so it can be chained.
+const keplerResolveRequest = defaultConfig.resolver?.resolveRequest;
+
+const config = {
+  resolver: {
+    extraNodeModules: {
+      '@amzn/react-native-kepler': path.resolve(
+        __dirname,
+        'node_modules/@amazon-devices/react-native-kepler',
+      ),
+    },
+    resolveRequest: (context, moduleName, platform) => {
+      if (
+        moduleName === '@segment/analytics-react-native/src/native-module' ||
+        moduleName.endsWith('/native-module')
+      ) {
+        return {
+          filePath: path.resolve(__dirname, 'src/native-module-polyfill.js'),
+          type: 'sourceFile',
+        };
+      }
+      if (keplerResolveRequest) {
+        return keplerResolveRequest(context, moduleName, platform);
+      }
+      return context.resolveRequest(context, moduleName, platform);
+    },
+  },
+};
+
+module.exports = mergeConfig(defaultConfig, config);
+```
+
+Create `src/native-module-polyfill.js` in your app with:
+
+```js
+'use strict';
+
+module.exports = {
+  warnMissingNativeModule: function () {},
+  getNativeModule: function () { return undefined; },
+  AnalyticsReactNativeModule: undefined,
+  AnalyticsReactNativeModuleEmitter: undefined,
+  AnalyticsReactNativeModuleEvents: {
+    SET_ANONYMOUS_ID: 'add-anonymous-id',
+    SET_DEEPLINK: 'add-deepLink-data',
+  },
+};
+```
 
 Now create you client as follows:
 

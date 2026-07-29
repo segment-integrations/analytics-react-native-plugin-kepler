@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
-    marginLeft: 200,
+    marginLeft: 40,
     width: 300,
   },
   linkText: {
     color: 'white',
-    fontSize: 45,
-    marginLeft: 30,
+    fontSize: 32,
+    marginLeft: 16,
   },
 });

@@ -23,7 +23,7 @@ const images = {
 };
 
 const segmentClient = createClient({
-  writeKey: '<writekey>',
+  writeKey: 'sBnerNR4XqYVYNr3m0obHCInQ57BZQ10',
   trackAppLifecycleEvents: true,
   debug: true,
   flushPolicies: [new CountFlushPolicy(1)],
@@ -102,34 +102,34 @@ const getStyles = () =>
       alignItems: 'center',
     },
     headerContainer: {
-      marginLeft: 200,
+      marginLeft: 40,
     },
     headerText: {
       color: 'white',
-      fontSize: 80,
+      fontSize: 48,
       marginBottom: 10,
     },
     subHeaderText: {
       color: 'white',
-      fontSize: 40,
+      fontSize: 26,
     },
     links: {
       flex: 1,
       flexDirection: 'column',
       justifyContent: 'space-around',
-      height: 600,
+      height: 400,
     },
     image: {
       flex: 1,
-      paddingLeft: 150,
+      paddingLeft: 60,
     },
     textContainer: {
       justifyContent: 'center',
       flex: 1,
-      marginLeft: 190,
+      marginLeft: 40,
     },
     text: {
       color: 'white',
-      fontSize: 40,
+      fontSize: 30,
     },
   });
