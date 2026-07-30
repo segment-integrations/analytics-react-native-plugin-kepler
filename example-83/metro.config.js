@@ -30,16 +30,35 @@ const config = {
         'node_modules/@amazon-devices/react-native-kepler',
       ),
     },
-    // Kepler 4 is New Architecture only — no legacy bridge. Redirect modules
-    // that call NativeModules at load time to safe no-op shims.
     resolveRequest: (context, moduleName, platform) => {
-      if (
-        moduleName ===
-        '@segment/analytics-react-native/src/native-module' ||
-        moduleName.endsWith('/native-module')
-      ) {
+      // react-native-get-random-values calls TurboModuleRegistry.getEnforcing
+      // for RNGetRandomValues which is not registered on Kepler 4. Replace with
+      // a pure-JS Math.random polyfill.
+      if (moduleName === 'react-native-get-random-values') {
         return {
-          filePath: path.resolve(__dirname, 'src/native-module-polyfill.js'),
+          filePath: path.resolve(__dirname, 'src/get-random-values-polyfill.js'),
+          type: 'sourceFile',
+        };
+      }
+      // @segment/sovran-react-native index.tsx accesses NativeModules which
+      // triggers Kepler's legacy BatchedBridge and crashes before any try/catch.
+      if (moduleName === '@segment/sovran-react-native' ||
+          moduleName.endsWith('/sovran-react-native')) {
+        return {
+          filePath: path.resolve(__dirname, 'src/sovran-polyfill.js'),
+          type: 'sourceFile',
+        };
+      }
+      // context.ts calls getNativeModule('AnalyticsReactNative') which also
+      // triggers NativeModules. Kepler plugin provides its own deviceInfoProvider
+      // so returning defaultContext here is safe.
+      // Match both absolute package path and relative imports (./context, ../context)
+      // from within the analytics-react-native package.
+      if (moduleName === '@segment/analytics-react-native/src/context' ||
+          ((moduleName === './context' || moduleName.endsWith('/context')) &&
+           context.originModulePath.includes('analytics-react-native'))) {
+        return {
+          filePath: path.resolve(__dirname, 'src/context-polyfill.js'),
           type: 'sourceFile',
         };
       }
@@ -51,7 +70,7 @@ const config = {
   },
   transformer: {
     transformIgnorePatterns: [
-      'node_modules/(?!(@amazon-devices|@amzn|react-native|@react-native|@react-native-async-storage)/)',
+      'node_modules/(?!(@amazon-devices|@amzn|@segment|react-native|@react-native|@react-native-async-storage)/)',
     ],
   },
 };
