@@ -102,3 +102,4 @@ packages/core/src/info.ts
 dist
 buildinfo.json
 CMakeUserPresets.json
+.npmrc
