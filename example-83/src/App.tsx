@@ -23,7 +23,7 @@ const images = {
 };
 
 const segmentClient = createClient({
-  writeKey: 'sBnerNR4XqYVYNr3m0obHCInQ57BZQ10',
+  writeKey: '<WRITE_KEY>',
   trackAppLifecycleEvents: true,
   debug: true,
   flushPolicies: [new CountFlushPolicy(1)],

@@ -10,9 +10,17 @@ title = "Basic UI React Native Application"
 version = "0.1.0"
 id = "com.segment.keplersample83"
 
+[os.version]
+target = "1.2"
+min = "1.2"
+
 [components]
 [[components.interactive]]
 id = "com.segment.keplersample83.main"
 runtime-module = "/com.amazon.kepler.runtime.react_native_kepler_4@IReactNativeKepler_0"
 categories = ["com.amazon.category.main"]
 launch-type = "singleton"
+
+[needs]
+[[needs.module]]
+id = "/com.amazon.vega.os@IVega_1_2"
